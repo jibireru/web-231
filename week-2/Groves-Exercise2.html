@@ -1,0 +1,43 @@
+<!--Sources used for JavaScript Inputs
+https://www.w3schools.com/html/html_scripts.asp
+https://www.w3schools.com/jsref/met_element_addeventlistener.asp
+https://www.w3schools.com/js/js_whereto.asp
+-->
+<!DOCTYPE html>
+<html lang="en">
+    <!--This is my assignment for Web 231 Exercise 2
+    Amanda Groves
+    3.26.2022-->
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>WEB 231 - Enterprise JavaScript I</title>
+        <!--link to global css file-->
+        <link rel="stylesheet" href="../global.css" type="text/css"/>
+    </head>
+
+    <body>
+        <div id="container">
+        <h1>Exercise 2.2 - Hello JavaScript</h1>
+            <button id="btnMyCourse">What Course Am I Taking?</button>
+            <p id="txtMyWorld"></p>
+            <a class="return-home" href="../index.html">Return</a>
+            
+        <script>
+            //set up text for txtMyWorld
+            document.getElementById("txtMyWorld").innerHTML = 
+            "You are now in Groves' World!";
+
+            //adding an on click event to btnMyCourse
+            const btnMyCourse = document.getElementById("btnMyCourse");
+            btnMyCourse.addEventListener("click", clickMe);
+
+            //adding action to button click
+            function clickMe() {
+            alert("WEB 231 - Enterprise JavaScript I");
+            }
+        </script>
+        </div>
+    </body>
+</html>
