@@ -1,0 +1,108 @@
+<!--Assignment: 2.3 Values and Variables
+Author: Amanda Groves
+Date: 3/27/2022
+-->
+<!--https://www.w3schools.com/jsref/jsref_tofixed.asp 
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Web 231 - Enterprise JavaScript I</title>
+        <link rel="stylesheet" type="text/css" href="groves-payroll.css" />
+        <link rel="stylesheet" type="text/css" href="../site.css" />
+        <link rel="stylesheet" type="text/css" href="../global.css" />
+        <!--google fonts for Oswald-->
+        <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500;700&display=swap" rel="stylesheet">
+    </head>
+    <body>
+        <div id="container">
+            <h1 id="payroll-holder">Payroll System</h1>
+
+            <!--First Employee Record for Amanda-->
+            <h3>Employee Record 1</h3>
+                <ul>
+                    <li id="txtFirstNameAmanda"></li>
+                    <li id="txtLastNameGroves"></li>
+                    <li id="txtAddressAmanda"></li>
+                    <li id="txtHireDateAmanda"></li>
+                    <li id="txtPayRateAmanda"></li>
+                </ul>
+
+            <!--Second Employee Record for Betty-->
+            <h3>Employee Record 2</h3>
+                <ul>
+                    <li id="txtFirstNameBetty"></li>
+                    <li id="txtLastNameBrannan"></li>
+                    <li id="txtAddressBetty"></li>
+                    <li id="txtHireDateBetty"></li>
+                    <li id="txtPayRateBetty"></li>
+                </ul>
+
+            <!--Third Employee Record for Brandon-->
+            <h3>Employee Record 3</h3>
+                <ul>
+                    <li id="txtFirstNameBrandon"></li>
+                    <li id="txtLastNameEvans"></li>
+                    <li id="txtAddressBrandon"></li>
+                    <li id="txtHireDateBrandon"></li>
+                    <li id="txtPayRateBrandon"></li>
+                </ul>
+
+                <!--Return Home to Landing Page-->
+                <a class="return-home" href="../index.html">Return</a>
+                </div>
+
+        <script>
+
+            //Variables for Employee Record for Amanda
+            const txtFirstNameAmanda = "Amanda";
+            const txtLastNameGroves = "Groves";
+            const txtAddressAmanda = "Foster St.";
+
+            let txtHireDateAmanda = new Date("07.04.2016").toLocaleDateString("en-US");
+            let txtPayRateAmanda = (15.60).toFixed(1);
+
+            //HTML tie in for Amanda
+            document.getElementById("txtFirstNameAmanda").innerHTML = txtFirstNameAmanda;
+            document.getElementById("txtLastNameGroves").innerHTML = txtLastNameGroves;
+            document.getElementById("txtAddressAmanda").innerHTML = txtAddressAmanda;
+            document.getElementById("txtHireDateAmanda").innerHTML = txtHireDateAmanda;
+            document.getElementById("txtPayRateAmanda").innerHTML = txtPayRateAmanda;
+
+            //Variables for Employee Record for Betty
+            const txtFirstNameBetty = "Betty";
+            const txtLastNameBrannan = "Brannan";
+            const txtAddressBetty = "Goss Scott Rd.";
+
+            let txtHireDateBetty = new Date("03.10.1990").toLocaleDateString("en-US");
+            let txtPayRateBetty = (17.01).toFixed(1);
+
+            //HTML tie in for Betty
+            document.getElementById("txtFirstNameBetty").innerHTML = txtFirstNameBetty;
+            document.getElementById("txtLastNameBrannan").innerHTML = txtLastNameBrannan;
+            document.getElementById("txtAddressBetty").innerHTML = txtAddressBetty;
+            document.getElementById("txtHireDateBetty").innerHTML = txtHireDateBetty;
+            document.getElementById("txtPayRateBetty").innerHTML = txtPayRateBetty;
+
+            //Variables for Employee Record for Brandon
+            const txtFirstNameBrandon = "Brandon";
+            const txtLastNameEvans = "Evans";
+            const txtAddressBrandon = "Civic Center Blvd";
+
+            let txtHireDateBrandon = new Date("10.12.2014").toLocaleDateString("en-US");
+            let txtPayRateBrandon = (15.60).toFixed(1);
+
+            //HTML tie in for Brandon
+            document.getElementById("txtFirstNameBrandon").innerHTML = txtFirstNameBrandon;
+            document.getElementById("txtLastNameEvans").innerHTML = txtLastNameEvans;
+            document.getElementById("txtAddressBrandon").innerHTML = txtAddressBrandon;
+            document.getElementById("txtHireDateBrandon").innerHTML = txtHireDateBrandon;
+            document.getElementById("txtPayRateBrandon").innerHTML = txtPayRateBrandon;
+
+        </script>
+    </body>
+</html>  
