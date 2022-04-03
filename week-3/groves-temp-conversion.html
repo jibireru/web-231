@@ -1,0 +1,56 @@
+<!-- 
+=================================================================
+Title: Assignment 3.2
+Author: Amanda Groves
+Date: 03 April 2022
+Modified by: Amanda Groves
+Description: This is a temperature conversion model function.
+=================================================================
+-->
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <!--Links to CSS files and Font Styles-->
+        <title>Web 231 - Enterprise JavaScript I</title>
+        <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500;700&display=swap" rel="stylesheet">
+        <link href="../global.css" type="text/css" rel="stylesheet" />
+        <link href="groves-temp-conversion.css" type="text/css" rel="stylesheet" />
+    </head>
+
+    <body>
+        <div id="container">
+            <!--This is the conversion card. Button and input goes here.-->
+            <h1 class="app-header">Welcome to the Temperature Conversion App!</h1>
+            <div class="card">
+                <div class="card-content">
+                    <h2 class="card-title">Fahrenheit to Celsius Converter</h2>
+                    <div class="form">
+                        <p>Fahrenheit Value:
+                        <input id="txtFahrenheit" type="number">
+                        </p>
+                    </div>
+                    <div class="form-field">
+                        <button class="btn" onclick="temConversion()" type="submit">Convert Temperature</button>
+                    </div>
+                </div>
+            </div>
+            <br>
+            <div class="card">
+                <!--Second card. This is where the temperature is converted.-->
+                <h2 class="card-title">Conversion Results</h2>
+                <div id="card-content"></div>
+        </div>
+
+        <!--Return home to Landing Page-->
+        <a class="return-home" href="../index.html">Return</a>
+        
+        <!--JavaScript Functions Start Here-->
+        <script>
+            function temConversion() {
+                let fahrenheit = document.getElementById("txtFahrenheit").value;
+                let celsius = ((parseFloat(fahrenheit) -32) / 1.8).toFixed(2);
+                document.getElementById("card-content").innerHTML = celsius;
+            }
+        </script>
+    </body>
+</html>

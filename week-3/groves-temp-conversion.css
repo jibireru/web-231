@@ -1,0 +1,30 @@
+/* Styling for containers */
+#container {
+    text-align: center;
+    padding: 10px;
+    font-family: 'Oswald', Verdana, Arial, sans-serif;
+}
+
+/* Making button match the other colors */
+.btn {
+    background-color: #4f3674;
+    color: white;
+}
+
+/* Removing the bold from the main header */
+.app-header {
+    text-align: center;
+    font-weight: normal;
+}
+
+/* Centering the cards */
+.card {
+    margin-left: 400px;
+    margin-right: 400px;
+    font-size: 28px;
+}
+
+/* Moving return button back to the left */
+.return-home {
+    margin-right: 650px;
+}
