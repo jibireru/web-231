@@ -1,0 +1,74 @@
+<!--
+====================================================
+Title: Assignment 4.2
+Author: Amanda Groves
+Date: 10 April 2022
+Modified by: Amanda Groves
+Description: Numbers Guessing Game Assignment
+=====================================================
+-->
+<!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <!--Links for fonts and CSS files below-->
+        <title>WEB 231 - Enterprise JavaScript I</title>
+        <link href="groves-number-game.css" type="text/css" rel="stylesheet">
+        <link href="../global.css" type="text/css" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500;700&display=swap" rel="stylesheet">
+    </head>
+ <body>
+     <div id="container">
+        <h1 class="app-header">Welcome to the numbers game!</h1>
+
+        <!--Card One With Form Input-->
+        <div class="card">
+            <div class="card-container">
+                <h2 class="card-title">Pick a number between 1 and 10</h2>
+                <div class="form">
+                    <p>Guess the number:
+                    <input id="txtMyNumber">
+                    </p>
+
+                    <!--Submit Button for Number Guessing-->
+                    <div class="form-field">
+                        <button type="Submit" id="btnSubmit" onclick="guessNumber()">Submit</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!--Card Two For Results of Game-->
+        <div class="card">
+            <div class="card-container">
+                <h2 class="card-title">Results</h2>
+                <div id="card-content"></div>
+            </div>
+        </div>
+    </div>
+
+    <!--Return Home to Landing Page-->
+    <a class="return-home" href="../index.html">Return</a>
+
+    <!--JavaScript Functions Here-->
+    <script>
+        // generate a random number
+        const rnd = Math.floor((Math.random() * 10) + 1);
+        // start guessing process
+        function guessNumber() {
+        let myNumber = document.getElementById("txtMyNumber").value
+        //If number is bigger than generated number
+        if(myNumber<rnd) {
+            document.getElementById("card-content").innerHTML = "The number is greater than " + myNumber;
+        }
+        //If number is less than generated number
+        else if (myNumber>rnd) {
+            document.getElementById("card-content").innerHTML = "The number is less than " + myNumber;
+        }
+        //If number is same as generated number
+        else {
+            document.getElementById("card-content").innerHTML = "Congratulations! You picked the correct number!";
+        }
+        }
+    </script>
+ </body>
+ </html>
