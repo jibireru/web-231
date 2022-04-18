@@ -1,0 +1,110 @@
+<!--
+=====================================
+Title: Assignment 5.2
+Author: Amanda Groves
+Date: 17 April 2022
+Modified by: Amanda Groves
+Description: Sequence Game for Web 231
+=====================================
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<!--Title, CSS Links, and Font Styling-->
+    <head>
+        <title>WEB 231-Enterprise JavaScript I</title>
+        <link href="../global.css" type="text/css" rel="stylesheet">
+        <link href="groves-sequence-game.css" type="text/css" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500;700&display=swap" rel="stylesheet">
+    </head>
+    <body>
+        <div id="container">
+            <h1 class="app-header">Welcome to the sequence game!</h1>
+
+        <!--Card One With Form Input-->
+        <div class="card">
+            <div class="card-container">
+                <h2 class="card-title">Sequence Selection Form</h2>
+                <div class="form">
+                    <label for="">Choose a number sequence:</label>
+
+                    <!--Select Options for the Drop Down Menu-->
+                    <select class="drop-down-menu" id="sequence">
+                        <option value="select">--Select--</option>
+                        <option value="fibonacci">Fibonacci Sequence</option>
+                        <option value="even">Even Numbers</option>
+                        <option value="odd">Odd Numbers</option>
+                    </select>
+
+                    <!--Submit Button for Sequence Game-->
+                    <div class="form-field">
+                        <button type="Submit" onclick="numSequence()" id="btnDisplaySequence">Display Sequence</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!--Card Two For Results of Game-->
+        <div class="card">
+            <div class="card-container">
+                <h2 class="card-title">Sequence Results</h2>
+                <div id="card-content"></div>
+            </div>
+        </div>
+        </div>
+
+    <!--JavaScript for Sequence Game-->
+    <script>
+        function numSequence() {
+            let choice = document.getElementById("sequence").value;
+
+            //alert for selecting --Select--
+            if (choice ==="select") {
+                alert("Invalid Selection, Please Try Again!")
+            }
+
+            //Results for selecting fibonacci
+            else if (choice === "fibonacci") {
+                let num1 = 0, num2 = 1, next;
+                let fibonacciSequenceText = "";
+                while (num1<40) {
+                    fibonacciSequenceText += num1 + ", ";
+                    next = num1 + num2;
+                    num1 = num2;
+                    num2 = next;
+                }
+                document.getElementById("card-content").innerHTML = fibonacciSequenceText.slice(0,-2);
+            }
+
+            //Results for selecting Even
+            else if (choice === "even") {
+                let evenSequenceText = "";
+                let num1 = 2;
+                let next;
+                do {
+                    evenSequenceText += num1 + ", ";
+                    next = num1 + 2;
+                    num1 = next;
+                    console.log("The even Sequence is "+ evenSequenceText);  
+                }
+                while (num1<20)
+                document.getElementById("card-content").innerHTML = evenSequenceText.slice(0, -2);
+            }
+
+            //Results for selecting Odd
+            else if (choice ==="odd") {
+                let oddSequenceText = "";
+                for(let num=1; num<20; num+=2){
+                oddSequenceText += num + ", ";    
+                console.log("The Odd Sequence is "+ oddSequenceText);  
+             }
+            document.getElementById("card-content").innerHTML = oddSequenceText.slice(0,-2);
+            }
+        }
+    </script>
+
+    <!--Return Home to Landing Page-->
+    <a class="return-home" href="../index.html">Return</a>
+    </body>
+    </html>
