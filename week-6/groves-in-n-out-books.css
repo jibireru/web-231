@@ -1,0 +1,72 @@
+/*
+Title: Assignment 6.2
+Author: Amanda Groves
+Date: 24 April 2022
+Modified by: Amanda Groves
+Description: Favorite Books and Authors Styling
+*/
+
+.app-header {
+    text-align: center;
+    font-weight: normal;
+}
+
+body {
+    font-family: 'Oswald', Verdana, Arial, sans-serif;
+}
+
+/*styling insides of cards*/
+.card-container {
+    padding: 10px;
+    text-align: center;
+}
+
+/* Centering Card Margins */
+.card {
+    margin-left: 400px;
+    margin-right: 400px;
+}
+/* Moving Return button in line with cards */
+.return-home {
+    margin-left: 400px;
+}
+
+/* Formatting for Button Style */
+#btnDisplayListing {
+    background-color: #4f3674;
+    color: white;
+    border: none;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    padding: 15px 32px;
+}
+
+/*Hidden Table Styling*/
+table {
+    border-collapse: collapse;
+    width: 100%;
+}
+th {
+    text-align: left;
+    padding: 8px 5px;
+    background-color: #4f3674;
+    color: white;
+}
+td, th {
+    border: 1px solid #ddd;
+}
+tr:hover {
+    cursor: pointer;
+    background-color: #d6a800;
+    color: #4f3674
+}
+td {
+    padding: 5px;
+}
+#card-content {
+    text-align: center;
+}

@@ -1,0 +1,161 @@
+<!--
+=====================================
+Title: Assignment 6.2
+Author: Amanda Groves
+Date: 24 April 2022
+Modified by: Amanda Groves
+Description: Favorite Books for Web 231
+=====================================
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<!--Title, CSS Links, and Font Styling-->
+    <head>
+        <title>WEB 231-Enterprise JavaScript I</title>
+        <link href="../global.css" type="text/css" rel="stylesheet">
+        <link href="groves-in-n-out-books.css" type="text/css" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500;700&display=swap" rel="stylesheet">
+    </head>
+
+    <body>
+        <div id="container">
+            <!--Card For Displaying the Label and Choices-->
+            <h1 class="app-header">Welcome to In-N-Out Books</h1>
+            <div class="card">
+                <div class="card-container">
+                    <h2 class="card-title">My Favorites</h2>
+                    <div class="form">
+                        <label for="">Choose a Listing:</label>
+                        <!--Selections for Drop Down Menu-->
+                        <select class="drop-down-menu" id="favoriteList">
+                            <option value="select">--Select--</option>
+                            <option value="books">Top 3 Favorite Books</option>
+                            <option value="authors">Top 3 Favorite Authors</option>
+                        </select>
+                    <div class="form-field">
+                        <!--Button for selection-->
+                        <button id="btnDisplayListing" type="submit" onclick="displayListing()">Display Listing</button>
+                    </div>
+                    </div>
+                </div>
+            </div>
+            <br />
+            <!--Hidden or shown secondary card-->
+            <div id="card">
+                <div id="favorite-books" class="card"></div>
+                <div id="favorite-authors" class="card"></div>
+            </div>
+        </div>
+
+        <!--Return Home to Landing Page-->
+        <a class="return-home" href="../index.html">Return</a>
+
+    <script>
+        //Favorite Books
+        let book1= {
+            isbn: "0399244549",
+            title: "THe Ruins of Gorlan",
+            pages: "249",
+        };
+        let book2= {
+            isbn: "0062457802",
+            title: "They Both Die at the End",
+            pages: "416",
+        };
+        let book3= {
+            isbn: "0307975959",
+            title: "Acceleration",
+            pages: "240",
+        };
+        //favorite authors
+        let author1 = {
+            name: "John Flanagan",
+            genre: "Fantasy",
+        };
+        let author2 = {
+            name: "Brian Jacques",
+            genre: "Fantasy",
+        };
+        let author3 = {
+            name: "Marissa Meyer",
+            genre: "Young Adult",
+        };
+
+        //declaring IDs for Books and Authors
+        let books = document.getElementById("favorite-books");
+        let authors = document.getElementById("favorite-authors");
+
+        //hiding the table by default
+        books.style.display = "none";
+        authors.style.display = "none";
+
+        //hiding or displaying all of the tables
+        function displayListing() {
+        let choice = document.getElementById("favoriteList").value;
+        console.log("choice");
+        if (choice === "select") {
+          books.style.display = "none";
+          authors.style.display = "none";
+        } else if (choice === "books") {
+          books.innerHTML = `
+              <div class="card-title">Top 3 Favorite Books</div>
+              <div class="card-content">
+                <table>
+                  <tr>
+                    <th>ISBN</th>
+                    <th>Title</th>
+                    <th>Pages</th>
+                  </tr>
+                  <tr>
+                    <td>${book1.isbn}</td>
+                    <td>${book1.title}</td>
+                    <td>${book1.pages}</td>
+                  </tr>
+                  <tr>
+                    <td>${book2.isbn}</td>
+                    <td>${book2.title}</td>
+                    <td>${book2.pages}</td>
+                  </tr>
+                  <tr>
+                    <td>${book3.isbn}</td>
+                    <td>${book3.title}</td>
+                    <td>${book3.pages}</td>
+                  </tr>
+                </table>
+              </div>
+              `;
+          books.style.display = "block";
+          authors.style.display = "none";
+        } else if (choice === "authors") {
+          authors.innerHTML = `
+              <div class="card-title">Top 3 Favorite Authors</div>
+        <div class="card-content">
+          <table>
+            <tr>
+              <th>Name</th>
+              <th style="width:60%">Genre</th>
+            </tr>
+           <tr>
+              <td>${author1.name}</td>
+              <td>${author1.genre}</td>
+          </tr>
+          <tr >
+              <td>${author2.name}</td>
+              <td>${author2.genre}</td>
+          </tr>
+          <tr >
+              <td>${author3.name}</td>
+              <td>${author3.genre}</td>
+          </tr>
+          </table>
+        </div>
+         `;
+          books.style.display = "none";
+          authors.style.display = "block";
+        }
+      }
+    </script>
+    </body>
+    </html>
