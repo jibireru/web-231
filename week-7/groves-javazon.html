@@ -1,0 +1,257 @@
+<!--
+=====================================
+Title: Assignment 7.2
+Author: Amanda Groves
+Date: 01 May 2022
+Modified by: Amanda Groves
+Description: Javazon Application
+=====================================
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<!--Title, CSS Links, and Font Styling-->
+    <head>
+        <title>WEB 231-Enterprise JavaScript I</title>
+        <link href="../global.css" type="text/css" rel="stylesheet">
+        <link href="groves-javazon.css" type="text/css" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500;700&display=swap" rel="stylesheet">
+    </head>
+
+    <body>
+        <div id="container">
+            <h1 class="app-header">Welcome to the Javazon App!</h1>
+            <!--card one for displaying drop down-->
+            <div class="card">
+                <div class="card-container">
+                  <h2 class="card-title">Javazon Selection Form</h2>
+                  <div class="form">
+                    <label for="">Choose a listing:</label>
+                    <select class="drop-down-menu" id="listing">
+                      <option value="select">--Select--</option>
+                      <option value="products">Products</option>
+                      <option value="services">Services</option>
+                      <option value="employees">Employees</option>
+                    </select>
+                    <!--button for function of listing-->
+                    <div class="form-field">
+                        <button type="submit" onclick="displayListing()" class="btn" id="btnDisplayListing">Display Listing</button>
+                    </div>
+                 </div>
+                </div>
+            </div>
+            <br />
+            <!--Second Card for Results-->
+            <div id="card">
+                <div id="javazon-results" class="card"></div>
+            </div>
+
+            <a class="return-home" href="../index.html">Return</a>
+        </div>
+
+        <script>
+            //class for Products being sold
+            class Product {
+            constructor(id, description, price, quantity) {
+                this.id = id;
+                this.description = description;
+                this.price = price.toFixed(2);
+                this.quantity = quantity;
+                this.totalValue = (this.price * this.quantity).toFixed(2);
+               }
+            }
+            //class for services offered
+            class Service {
+            constructor(id, description, hourlyRate, miniHours) {
+                this.id = id;
+                this.description = description;
+                this.hourlyRate = hourlyRate.toFixed(2);
+                this.miniHours = miniHours;
+                }
+            }
+            //class for employees
+            class Employee {
+            constructor(id, lastName, firstName, salary) {
+                this.id = id;
+                this.lastName = lastName;
+                this.firstName = firstName;
+                this.salary = salary.toFixed(2);
+                }
+            }
+            //Table information for Products listed
+            let product1 = new Product(4573173303667, "Tales of Arise", 59.99, 4);
+                console.log(product1);
+            let product2 = new Product(4573173303668, "Tales of Berseria", 49.99, 5);
+            let product3 = new Product(4573173303669, "Tales of Zestiria", 24.99, 10);
+            let product4 = new Product(4573173303670, "Tales of Symphonia", 19.99, 5);
+            let product5 = new Product(4573173303671, "Tales of Crestoria", 15.99, 9);
+            //Table Information for Services
+            let service1 = new Service(100, "Character Sketch", 50, 1);
+            let service2 = new Service(101, "Full Character Design", 100, 5);
+            let service3 = new Service(100, "Scenic Art", 90, 4);
+            //Table information for employees
+            let employee1 = new Employee(1000, "Hernandez", "Kim", 16);
+            let employee2 = new Employee(1001, "Evans", "Brandon", 15.9);
+            let employee3 = new Employee(1002, "Murray", "Haley", 15.5);
+            let employee4 = new Employee(1003, "Williams", "Keke", 19);
+            let employee5 = new Employee(1004, "Curtis", "Diane", 21.5);
+            //trigger for results
+            let javaResult = document.getElementById("javazon-results")
+
+            function displayListing() {
+            let choice = document.getElementById("listing").value; 
+                console.log(choice);
+                //Displays products
+                switch (choice) {
+                case "products":
+
+                javaResult.innerHTML = `<div class="card-title">Javazon Products</div>
+
+                <div class="card-content">
+                    <table>
+                    <tr>
+                    <th>Product ID</th>
+                    <th>Description</th>
+                    <th>Price</th>
+                    <th>Quantity</th>
+                    <th>Total Value</th>
+                    </tr>
+
+                    <tr>
+                    <td>${product1.id}</td>
+                    <td>${product1.description}</td>
+                    <td>${product1.price}</td>
+                    <td>${product1.quantity}</td>
+                    <td>${product1.totalValue}</td>
+                    </tr>
+
+                    <tr>
+                    <td>${product2.id}</td>
+                    <td>${product2.description}</td>
+                    <td>${product2.price}</td>
+                    <td>${product2.quantity}</td>
+                    <td>${product2.totalValue}</td>
+                    </tr>
+
+                    <tr>
+                    <td>${product3.id}</td>
+                    <td>${product3.description}</td>
+                    <td>${product3.price}</td>
+                    <td>${product3.quantity}</td>
+                    <td>${product3.totalValue}</td>
+                    </tr>
+
+                    <tr>
+                    <td>${product4.id}</td>
+                    <td>${product4.description}</td>
+                    <td>${product4.price}</td>
+                    <td>${product4.quantity}</td>
+                    <td>${product4.totalValue}</td>
+                    </tr>
+
+                    <tr>
+                    <td>${product5.id}</td>
+                    <td>${product5.description}</td>
+                    <td>${product5.price}</td>
+                    <td>${product5.quantity}</td>
+                    <td>${product5.totalValue}</td>
+                    </tr>
+                    </table>
+                </div>`;
+
+                javaResult.style.display = "block";
+           
+            break;
+            case "services":
+            //displays services
+            javaResult.innerHTML = `<div class="card-title">Javazon Services</div>
+
+            <div class="card-content">
+              <table>
+                <tr>
+                  <th>Service ID</th>
+                  <th>Description</th>
+                  <th>Hourly Rate</th>
+                  <th>Minimum Billable Hours</th>
+                </tr>
+                <tr>
+                  <td>${service1.id}</td>
+                  <td>${service1.description}</td>
+                  <td>${service1.hourlyRate}</td>
+                  <td>${service1.miniHours}</td>
+                </tr>
+                <tr>
+                  <td>${service2.id}</td>
+                  <td>${service2.description}</td>
+                  <td>${service2.hourlyRate}</td>
+                  <td>${service2.miniHours}</td>
+                </tr>
+                <tr>
+                  <td>${service3.id}</td>
+                  <td>${service3.description}</td>
+                  <td>${service3.hourlyRate}</td>
+                  <td>${service3.miniHours}</td>
+                </tr>
+               </table>
+            </div>`;
+
+            javaResult.style.display = "block";
+            break;
+            case "employees":
+            //displays employees
+            javaResult.innerHTML = `<div class="card-title">Javazon Employees</div>
+            
+            <div class="card-content">
+              <table>
+                <tr>
+                  <th>Employee ID</th>
+                  <th>Last Name</th>
+                  <th>First Name</th>
+                  <th>Salary</th>
+                </tr>
+                <tr>
+                  <td>${employee1.id}</td>
+                  <td>${employee1.lastName}</td>
+                  <td>${employee1.firstName}</td>
+                  <td>${employee1.salary}</td>
+                </tr>
+                <tr>
+                  <td>${employee2.id}</td>
+                  <td>${employee2.lastName}</td>
+                  <td>${employee2.firstName}</td>
+                  <td>${employee2.salary}</td>
+                </tr>
+                <tr>
+                  <td>${employee3.id}</td>
+                  <td>${employee3.lastName}</td>
+                  <td>${employee3.firstName}</td>
+                  <td>${employee3.salary}</td>
+                </tr>
+                <tr>
+                  <td>${employee4.id}</td>
+                  <td>${employee4.lastName}</td>
+                  <td>${employee4.firstName}</td>
+                  <td>${employee4.salary}</td>
+                </tr>
+                <tr>
+                  <td>${employee5.id}</td>
+                  <td>${employee5.lastName}</td>
+                  <td>${employee5.firstName}</td>
+                  <td>${employee5.salary}</td>
+                </tr>
+               </table>
+              </div>`;
+
+            javaResult.style.display = "block";
+            
+            break;
+            default:
+            //displays nothing
+            javaResult.style.display = "none";
+            }
+        }
+
+        </script>
+    </body>
+    </html>

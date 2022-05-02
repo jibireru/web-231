@@ -1,0 +1,73 @@
+/*
+Title: Assignment 7.2
+Author: Amanda Groves
+Date: 01 May 2022
+Modified by: Amanda Groves
+Description: Javazon Products Tables
+*/
+
+/*Font-family*/
+body {
+    font-family: "Oswald", Verdana, Arial, sans-serif;
+}
+
+/*Fixing Header*/
+.app-header {
+    text-align: center;
+    font-weight: normal;
+}
+
+/*Card Styling*/
+.card-container {
+    padding: 10px;
+    text-align: center;
+}
+.card {
+    margin-left: 400px;
+    margin-right: 400px;
+}
+
+/*Moving Return button back to right spot*/
+.return-home {
+    margin-left: 400px;
+}
+
+/*Button Styling*/
+#btnDisplayListing {
+    background-color: #4f3674;
+    color: white;
+    border: none;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    padding: 15px 32px;
+}
+
+/*Hidden Table Styling*/
+table {
+    border-collapse: collapse;
+    width: 100%;
+}
+th {
+    text-align: left;
+    padding: 8px 5px;
+    background-color: #4f3674;
+    color: white;
+}
+td, th {
+    border: 1px solid #ddd;
+}
+tr:hover {
+    cursor: pointer;
+    background-color: #d6a800;
+    color: #4f3674
+}
+td {
+    padding: 5px;
+}
+#card-content {
+    text-align: center;
+}
