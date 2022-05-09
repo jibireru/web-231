@@ -1,0 +1,55 @@
+/*
+Title: Assignment 8.2
+Author: Amanda Groves
+Date: 08 May 2022
+Modified by: Amanda Groves
+Description: Alphabet Game
+*/
+
+.app-header {
+    text-align: center;
+    font-weight: normal;
+}
+
+/*Font Styling*/
+body {
+    font-family: 'Oswald', Verdana, Arial, sans-serif;
+}
+
+/*centering new card content*/
+.card-content {
+    text-align: center;
+}
+
+.card-container {
+    text-align: center;
+}
+
+/*Changing font size */
+#container {
+    padding: 10px;
+}
+
+/* Centering Card Margins */
+.card {
+    margin-left: 400px;
+    margin-right: 400px;
+}
+/* Moving Return button in line with cards */
+.return-home {
+    margin-left: 400px;
+}
+
+/* Formatting for Button Style */
+#btnFindLetter {
+    background-color: #4f3674;
+    color: white;
+    border: none;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    padding: 15px 32px;
+}
